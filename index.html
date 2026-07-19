@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaurav Negi — Full-Stack & QA Engineer</title>
+    <meta
+      name="description"
+      content="Gaurav Negi — B.Tech CSE student, Full-Stack & QA Intern. Building, testing, shipping."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <div class="scan-line"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+    <div class="cursor-label mono" id="cursorLabel"></div>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo"
+          >gaurav<span class="dim">.negi</span
+          ><span class="cursor-blink">_</span></a
+        >
+        <div class="nav-links">
+          <a href="#pipeline">pipeline</a>
+          <a href="#projects">projects</a>
+          <a href="#experience">log</a>
+          <a href="#contact">contact</a>
+        </div>
+        <a
+          href="https://gauravnegi33.github.io/Resume/"
+          target="_blank"
+          class="nav-cta"
+          >./resume</a
+        >
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="eyebrow mono">// B.Tech CSE '28 · Amrapali University</p>
+          <h1 class="hero-title">
+            <span class="line">I build it,</span>
+            <span class="line"
+              >then I <span class="accent-cyan">break</span> it,</span
+            >
+            <span class="line"
+              >then I <span class="accent-amber">ship</span> it.</span
+            >
+          </h1>
+          <p class="hero-sub">
+            Full-Stack &amp; QA Intern at Shorter Loop × Snapied, AI/ML Intern
+            at CodeAlpha. Currently obsessed with clean APIs, semantic markup,
+            and finding bugs before recruiters do.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a
+              href="https://github.com/GAURAVNEGI33"
+              target="_blank"
+              class="btn btn-ghost"
+              >GitHub ↗</a
+            >
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="terminal" id="terminal">
+            <div class="terminal-bar">
+              <div class="terminal-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="mono terminal-title">gaurav@portfolio: ~</span>
+            </div>
+            <div class="terminal-body mono" id="terminal-body"></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint mono">
+        scroll <span class="arrow-down">↓</span>
+      </div>
+    </header>
+
+    <!-- PIPELINE / SKILLS -->
+    <section class="pipeline" id="pipeline">
+      <p class="section-eyebrow mono">// SKILLS · ci_cd_pipeline.yml</p>
+      <h2 class="section-title">Every skill runs through the same pipeline.</h2>
+
+      <div class="pipeline-track">
+        <div class="pipeline-stage" data-stage="1">
+          <div class="stage-head">
+            <span class="stage-status mono">PENDING</span>
+            <span class="stage-name">BUILD</span>
+          </div>
+          <ul class="stage-list mono">
+            <li>HTML5 / Semantic Markup</li>
+            <li>CSS3 / Grid &amp; Flexbox</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Figma / UI-UX Design</li>
+          </ul>
+        </div>
+
+        <div class="pipeline-stage" data-stage="2">
+          <div class="stage-head">
+            <span class="stage-status mono">PENDING</span>
+            <span class="stage-name">TEST</span>
+          </div>
+          <ul class="stage-list mono">
+            <li>Manual &amp; Functional QA</li>
+            <li>Thunder Client / API Testing</li>
+            <li>Bug Tracking &amp; Reports</li>
+            <li>Cross-browser Testing</li>
+          </ul>
+        </div>
+
+        <div class="pipeline-stage" data-stage="3">
+          <div class="stage-head">
+            <span class="stage-status mono">PENDING</span>
+            <span class="stage-name">DEPLOY</span>
+          </div>
+          <ul class="stage-list mono">
+            <li>Node.js / Express.js</li>
+            <li>MVC Architecture &amp; REST APIs</li>
+            <li>Firebase (Auth + Firestore)</li>
+            <li>Git &amp; GitHub</li>
+            <li>Vercel CI/CD</li>
+          </ul>
+        </div>
+
+        <div class="pipeline-stage" data-stage="4">
+          <div class="stage-head">
+            <span class="stage-status mono">PENDING</span>
+            <span class="stage-name">MONITOR</span>
+          </div>
+          <ul class="stage-list mono">
+            <li>Claude &amp; Gemini API</li>
+            <li>AI Fallback Logic</li>
+            <li>Data-driven Debugging</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pipeline-progress-line">
+        <div class="pipeline-progress-fill" id="pipelineFill"></div>
+      </div>
+
+      <div class="soft-skills">
+        <p class="soft-skills-label mono">// runtime_traits</p>
+        <div class="soft-skills-row mono">
+          <span>Problem Solving</span>
+          <span>Communication</span>
+          <span>Team Collaboration</span>
+          <span>Adaptability</span>
+          <span>Time Management</span>
+          <span>Attention to Detail</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <p class="section-eyebrow mono">// ls ~/projects</p>
+      <h2 class="section-title">Things I've shipped.</h2>
+
+      <div class="repo-grid">
+        <article
+          class="repo-card featured"
+          data-difficulty="Hard"
+          data-cursor="VIEW LIVE →"
+        >
+          <div class="repo-head">
+            <span class="repo-icon">⬡</span>
+            <h3>FitTrack AI</h3>
+            <span class="repo-badge mono">FEATURED</span>
+          </div>
+          <p class="repo-desc">
+            Full-stack AI-powered fitness &amp; nutrition PWA. 300+ item Indian
+            food database, photo-based food analysis, Firebase auth, and dual-AI
+            fallback (Claude + Gemini) so it never goes down.
+          </p>
+          <div class="repo-tags mono">
+            <span>React</span><span>Firebase</span><span>Claude API</span
+            ><span>Gemini API</span><span>Vercel</span>
+          </div>
+          <div class="repo-links">
+            <a
+              href="https://fittrack-ai-1227.vercel.app"
+              target="_blank"
+              class="repo-link"
+              >Live ↗</a
+            >
+          </div>
+          <div class="difficulty-tag mono">DIFFICULTY: HARD</div>
+        </article>
+
+        <article
+          class="repo-card"
+          data-difficulty="Medium"
+          data-cursor="VIEW CODE →"
+        >
+          <div class="repo-head">
+            <span class="repo-icon">⬡</span>
+            <h3>resume-api</h3>
+          </div>
+          <p class="repo-desc">
+            Node.js + Express REST API — 34 routes across 8 resources,
+            refactored into a clean MVC controller pattern, file-based
+            persistence via the fs module.
+          </p>
+          <div class="repo-tags mono">
+            <span>Node.js</span><span>Express</span><span>MVC</span
+            ><span>REST</span>
+          </div>
+          <div class="repo-links">
+            <a
+              href="https://github.com/GAURAVNEGI33/resume-api"
+              target="_blank"
+              class="repo-link"
+              >Code ↗</a
+            >
+          </div>
+          <div class="difficulty-tag mono">DIFFICULTY: MEDIUM</div>
+        </article>
+
+        <article
+          class="repo-card"
+          data-difficulty="Medium"
+          data-cursor="VIEW LIVE →"
+        >
+          <div class="repo-head">
+            <span class="repo-icon">⬡</span>
+            <h3>ResumeFlow</h3>
+          </div>
+          <p class="repo-desc">
+            Dark-themed SaaS landing page with a two-column auth flow
+            (login/register), teal-to-blue gradient accents, and
+            cross-browser-safe progress bars.
+          </p>
+          <div class="repo-tags mono">
+            <span>Semantic HTML</span><span>CSS Grid</span><span>UI/UX</span>
+          </div>
+          <div class="repo-links">
+            <a
+              href="https://gauravnegi33.github.io/resume-landing"
+              target="_blank"
+              class="repo-link"
+              >Live ↗</a
+            >
+          </div>
+          <div class="difficulty-tag mono">DIFFICULTY: MEDIUM</div>
+        </article>
+
+        <article
+          class="repo-card"
+          data-difficulty="Easy"
+          data-cursor="VIEW LIVE →"
+        >
+          <div class="repo-head">
+            <span class="repo-icon">⬡</span>
+            <h3>Semantic Resume Site</h3>
+          </div>
+          <p class="repo-desc">
+            A resume built with zero unnecessary divs — aside, article,
+            dl/dt/dd, figure, hgroup, and time tags doing the actual structural
+            work. Scored 98% instructor match.
+          </p>
+          <div class="repo-tags mono">
+            <span>Semantic HTML</span><span>CSS Grid</span>
+          </div>
+          <div class="repo-links">
+            <a
+              href="https://gauravnegi33.github.io/Resume/"
+              target="_blank"
+              class="repo-link"
+              >Live ↗</a
+            >
+          </div>
+          <div class="difficulty-tag mono">DIFFICULTY: EASY</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE / LOG -->
+    <section class="log" id="experience">
+      <p class="section-eyebrow mono">// git log --oneline</p>
+      <h2 class="section-title">Commit history.</h2>
+
+      <div class="commit-list">
+        <div class="commit">
+          <span class="commit-hash mono">a3f9d2c</span>
+          <div class="commit-body">
+            <h3>Full-Stack &amp; QA Intern — Shorter Loop × Snapied</h3>
+            <p>
+              Building and testing production features end-to-end; writing bug
+              reports that actually get fixed.
+            </p>
+            <span class="commit-tag mono">current</span>
+          </div>
+        </div>
+        <div class="commit">
+          <span class="commit-hash mono">7c1e88b</span>
+          <div class="commit-body">
+            <h3>AI/ML Intern — CodeAlpha</h3>
+            <p>
+              Shipped a FAQ chatbot and a language translation tool. First real
+              contact with applied ML.
+            </p>
+            <span class="commit-tag mono">current</span>
+          </div>
+        </div>
+        <div class="commit">
+          <span class="commit-hash mono">4b02f31</span>
+          <div class="commit-body">
+            <h3>B.Tech CSE — Amrapali University, Haldwani</h3>
+            <p>
+              2024 – 2028. Learning fast, breaking things faster, fixing them
+              faster still.
+            </p>
+            <span class="commit-tag mono">in progress</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact-terminal">
+        <p class="section-eyebrow mono">// contact.sh</p>
+        <h2 class="section-title">Let's build something.</h2>
+        <p class="contact-sub">
+          Open to Frontend, Full-Stack, and QA/SDET internship roles.
+        </p>
+        <div class="contact-links">
+          <a
+            href="https://github.com/GAURAVNEGI33"
+            target="_blank"
+            class="contact-link"
+          >
+            <span class="mono">--github</span> github.com/GAURAVNEGI33
+          </a>
+          <a
+            href="https://linkedin.com/in/gaurav-negi-b2b162350"
+            target="_blank"
+            class="contact-link"
+          >
+            <span class="mono">--linkedin</span> gaurav-negi-b2b162350
+          </a>
+          <a
+            href="https://gauravnegi33.github.io/Resume/"
+            target="_blank"
+            class="contact-link"
+          >
+            <span class="mono">--resume</span> view / download
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer mono">
+      <span
+        >built by Gaurav Negi · <span class="accent-cyan">exit 0</span></span
+      >
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
