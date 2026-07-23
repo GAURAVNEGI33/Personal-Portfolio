@@ -92,11 +92,27 @@ img { display: block; max-width: 100%; }
 .section-label { margin-bottom: 72px; display: flex; align-items: center; gap: 14px; color: #666561; font: .69rem var(--font-space), monospace; text-transform: uppercase; letter-spacing: .12em; }
 .section-label span { color: var(--gold); }
 .section-label::after { content: ""; height: 1px; width: 54px; background: var(--line); }
+.about,
+.experience,
+.github,
+.contact {
+  background: #111111;
+  color: #f4f3ef;
+  --ink: #f4f3ef;
+  --muted: #a9a8a3;
+  --line: rgba(244,243,239,.15);
+  --cyan: #f4f3ef;
+  --violet: #f4f3ef;
+}
+.about .section-label,
+.experience .section-label,
+.github .section-label,
+.contact .section-label { color: #a9a8a3; }
 .about-layout { display: grid; grid-template-columns: 1.3fr .7fr; gap: 9vw; align-items: start; }
 .display-copy { margin: 0; max-width: 900px; font-size: clamp(2.7rem, 5.2vw, 6.5rem); line-height: 1.02; letter-spacing: -.065em; font-weight: 550; }
 .display-copy span { color: var(--cyan); }
 .about-body { padding-top: 12px; }
-.about-body p { margin: 0 0 24px; color: #666561; line-height: 1.85; font-size: .98rem; }
+.about-body p { margin: 0 0 24px; color: var(--muted); line-height: 1.85; font-size: .98rem; }
 .location { display: flex; align-items: center; gap: 9px; padding-top: 8px; color: var(--ink); font: .7rem var(--font-space), monospace; }
 .metrics { margin-top: 90px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .metric { padding: 36px 3vw; display: flex; align-items: baseline; gap: 16px; border-right: 1px solid var(--line); }
@@ -143,9 +159,10 @@ img { display: block; max-width: 100%; }
 .timeline-row li { padding: 10px 0; color: #666561; font-size: .83rem; border-bottom: 1px solid rgba(17,17,17,.08); }
 .timeline-row li::before { content: "↳"; margin-right: 8px; color: var(--violet); }
 
-.work { background: #111111; color: #f4f3ef; --ink: #f4f3ef; --muted: #a9a8a3; --line: rgba(244,243,239,.15); --cyan: #f4f3ef; --gold: #e2261f; }
+.experience .timeline-row li { color: var(--muted); border-bottom-color: var(--line); }
+.work { background: #f4f3ef; color: #111111; }
 .projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.project { position: relative; min-height: 600px; overflow: hidden; border: 1px solid var(--line); border-radius: 26px; background: var(--panel); transform-style: preserve-3d; box-shadow: 0 30px 80px rgba(0,0,0,.18); }
+.project { position: relative; min-height: 600px; overflow: hidden; border: 1px solid rgba(17,17,17,.16); border-radius: 26px; background: #111111; color: #f4f3ef; transform-style: preserve-3d; box-shadow: 0 30px 80px rgba(0,0,0,.18); }
 .project::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; opacity: 0; background: radial-gradient(500px circle at var(--px, 50%) var(--py, 50%), rgba(119,232,218,.13), transparent 42%); transition: opacity .35s; }
 .project:hover::after { opacity: 1; }
 .project-feature { grid-column: 1 / -1; min-height: 760px; }
@@ -168,7 +185,7 @@ img { display: block; max-width: 100%; }
 .project li { padding: 7px 10px; border: 1px solid rgba(255,255,255,.14); border-radius: 999px; background: rgba(10,10,12,.42); backdrop-filter: blur(8px); font: .58rem var(--font-space), monospace; }
 .project-links { display: flex; gap: 8px; }
 .project-links a { width: 43px; height: 43px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; background: rgba(0,0,0,.35); font-size: 1rem; transition: background .25s, color .25s, transform .25s; }
-.project-links a:hover { background: var(--ink); color: #111; transform: rotate(8deg); }
+.project-links a:hover { background: #f4f3ef; color: #111; transform: rotate(8deg); }
 .code-visual { position: absolute; inset: 0; padding: 12% 9%; display: flex; flex-direction: column; gap: 18px; background: radial-gradient(circle at 80% 20%, rgba(156,133,255,.2), transparent 35%), linear-gradient(145deg, #111117, #09090c); color: #8c8991; font: clamp(.7rem, 1vw, .95rem) var(--font-space), monospace; }
 .code-visual div { padding: 18px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); }
 .code-visual span { color: var(--cyan); }
@@ -181,6 +198,7 @@ img { display: block; max-width: 100%; }
 .repo-card { position: relative; min-height: 300px; padding: 34px 34px 75px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s; }
 .repo-card:first-child { border-left: 1px solid var(--line); }
 .repo-card:hover { background: rgba(17,17,17,.035); }
+.github .repo-card:hover { background: rgba(244,243,239,.055); }
 .repo-top { display: flex; justify-content: space-between; color: var(--muted); font: .62rem var(--font-space), monospace; }
 .repo-top svg { color: var(--ink); font-size: 1.15rem; }
 .repo-card h3 { margin: 58px 0 13px; font-size: 1.55rem; letter-spacing: -.045em; }
@@ -207,7 +225,7 @@ img { display: block; max-width: 100%; }
 .contact-copy h2 { margin: 0; max-width: 1200px; font-size: clamp(4rem, 9vw, 10rem); line-height: .87; letter-spacing: -.085em; font-weight: 600; }
 .contact-copy h2 span { color: transparent; -webkit-text-stroke: 1px var(--cyan); }
 .contact-actions { width: 100%; margin-top: 60px; display: flex; align-items: center; gap: 18px; }
-.contact-email { padding-bottom: 8px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(17,17,17,.35); font: clamp(.85rem, 1.4vw, 1.1rem) var(--font-space), monospace; }
+.contact-email { padding-bottom: 8px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--line); font: clamp(.85rem, 1.4vw, 1.1rem) var(--font-space), monospace; }
 .copy-button { padding: 11px 14px; display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; background: rgba(17,17,17,.04); color: var(--muted); cursor: pointer; font: .62rem var(--font-space), monospace; }
 footer { min-height: 150px; padding: 40px max(5vw, 28px); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; color: var(--muted); border-top: 1px solid var(--line); }
 .footer-brand { color: var(--ink); font-weight: 800; letter-spacing: -.04em; }
