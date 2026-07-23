@@ -42,7 +42,7 @@ test("server-renders the complete portfolio and metadata", async () => {
   assert.match(html, /Amrapali University/);
   assert.match(html, /gauravnegigvps@gmail\.com/);
   assert.match(html, /Skip to content/);
-  assert.match(html, /https:\/\/portfolio\.example\/og\.png/);
+  assert.match(html, /https:\/\/portfolio\.example\/og-monochrome\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 

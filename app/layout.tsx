@@ -49,13 +49,13 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       title: "Gaurav Negi — Full-Stack Developer",
       description: "AI-powered web products, live data, and thoughtful interfaces.",
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "Gaurav Negi portfolio" }],
+      images: [{ url: "/og-monochrome.png", width: 1200, height: 630, alt: "Gaurav Negi portfolio" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "Gaurav Negi — Full-Stack Developer",
       description: "AI-powered web products, live data, and thoughtful interfaces.",
-      images: ["/og.png"],
+      images: ["/og-monochrome.png"],
     },
   };
 }
