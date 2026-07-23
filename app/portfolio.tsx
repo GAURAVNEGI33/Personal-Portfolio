@@ -689,7 +689,7 @@ export default function Portfolio() {
           </div>
         </section>
 
-        <section className="education section">
+        <section className="education section" id="education">
           <Reveal className="section-label">
             <span>06</span> Education
           </Reveal>
