@@ -17,6 +17,9 @@ import {
   FiLinkedin,
   FiMail,
   FiMapPin,
+  FiMenu,
+  FiX,
+  FiArrowUp,
 } from "react-icons/fi";
 import {
   SiCss,
@@ -176,6 +179,8 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       onMouseMove={(event) => {
         const rect = cardRef.current?.getBoundingClientRect();
         if (!rect) return;
+        cardRef.current?.style.setProperty("--px", `${event.clientX - rect.left}px`);
+        cardRef.current?.style.setProperty("--py", `${event.clientY - rect.top}px`);
         rotateY.set(((event.clientX - rect.left) / rect.width - 0.5) * 3);
         rotateX.set(-((event.clientY - rect.top) / rect.height - 0.5) * 3);
       }}
@@ -242,6 +247,9 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
 
 export default function Portfolio() {
   const [loaded, setLoaded] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [showTop, setShowTop] = useState(false);
   const [activeSection, setActiveSection] = useState("About");
   const [copied, setCopied] = useState(false);
   const mouseX = useMotionValue(-200);
@@ -254,7 +262,15 @@ export default function Portfolio() {
   );
 
   useEffect(() => {
-    setLoaded(true);
+    const hasVisited = window.sessionStorage.getItem("gn-portfolio-visited");
+    if (hasVisited) {
+      setShowLoader(false);
+      setLoaded(true);
+    } else {
+      window.sessionStorage.setItem("gn-portfolio-visited", "true");
+      setLoaded(true);
+      window.setTimeout(() => setShowLoader(false), 1450);
+    }
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
     let frame = 0;
     const raf = (time: number) => {
@@ -262,6 +278,8 @@ export default function Portfolio() {
       frame = requestAnimationFrame(raf);
     };
     frame = requestAnimationFrame(raf);
+    const handleScroll = () => setShowTop(window.scrollY > window.innerHeight * 0.7);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(".progress-bar", {
@@ -293,6 +311,7 @@ export default function Portfolio() {
 
     return () => {
       observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
       cancelAnimationFrame(frame);
       lenis.destroy();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -320,21 +339,23 @@ export default function Portfolio() {
       <div className="noise" aria-hidden="true" />
       <div className="progress-bar" aria-hidden="true" />
 
-      <motion.div
-        className="loader"
-        initial={false}
-        animate={loaded ? { y: "-100%" } : { y: 0 }}
-        transition={{ duration: 0.9, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
-        aria-hidden="true"
-      >
-        <motion.span
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
+      {showLoader && (
+        <motion.div
+          className="loader"
+          initial={false}
+          animate={loaded ? { y: "-100%" } : { y: 0 }}
+          transition={{ duration: 0.9, delay: 0.35, ease: [0.76, 0, 0.24, 1] }}
+          aria-hidden="true"
         >
-          GN<span>®</span>
-        </motion.span>
-        <div className="loader-line" />
-      </motion.div>
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            GN<span>®</span>
+          </motion.span>
+          <div className="loader-line" />
+        </motion.div>
+      )}
 
       <header className="nav-shell">
         <a className="wordmark" href="#top" aria-label="Gaurav Negi, home">
@@ -354,7 +375,30 @@ export default function Portfolio() {
         <a className="nav-contact" href="mailto:gauravnegigvps@gmail.com">
           Let&apos;s talk <FiArrowUpRight />
         </a>
+        <button
+          className="mobile-menu-trigger"
+          type="button"
+          onClick={() => setMobileOpen((open) => !open)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+        >
+          {mobileOpen ? <FiX /> : <FiMenu />}
+        </button>
       </header>
+      <motion.div
+        className="mobile-menu"
+        initial={false}
+        animate={mobileOpen ? { opacity: 1, y: 0, pointerEvents: "auto" } : { opacity: 0, y: -18, pointerEvents: "none" }}
+        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span>Navigate / 2026</span>
+        {nav.map(([label, href], index) => (
+          <a href={href} key={label} onClick={() => setMobileOpen(false)}>
+            <small>0{index + 1}</small>{label}<FiArrowUpRight />
+          </a>
+        ))}
+        <a className="mobile-email" href="mailto:gauravnegigvps@gmail.com">Start a conversation</a>
+      </motion.div>
 
       <section className="hero" id="top">
         <div className="aurora aurora-one parallax-orb" />
@@ -692,6 +736,16 @@ export default function Portfolio() {
           <a href="mailto:gauravnegigvps@gmail.com"><FiMail /> Email</a>
         </div>
       </footer>
+      <motion.a
+        href="#top"
+        className="back-to-top"
+        aria-label="Back to top"
+        initial={false}
+        animate={showTop ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 12 }}
+        style={{ pointerEvents: showTop ? "auto" : "none" }}
+      >
+        <FiArrowUp />
+      </motion.a>
     </main>
   );
 }
