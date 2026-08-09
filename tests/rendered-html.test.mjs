@@ -37,8 +37,12 @@ test("server-renders the complete portfolio and metadata", async () => {
   assert.match(html, /Gaurav Negi/);
   assert.match(html, /AI-powered web products/);
   assert.match(html, /FitTrack AI/);
+  assert.match(html, /AI Notification Router/);
+  assert.match(html, /Rank #273/);
   assert.match(html, /ResumeFlow/);
   assert.match(html, /Full-Stack &amp; QA Intern/);
+  assert.match(html, /2025[\s\S]*CodeAlpha/);
+  assert.doesNotMatch(html, /2025\s*—\s*Present/);
   assert.match(html, /Amrapali University/);
   assert.match(html, /gauravnegigvps@gmail\.com/);
   assert.match(html, /Skip to content/);
