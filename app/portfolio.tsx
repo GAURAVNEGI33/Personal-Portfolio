@@ -55,6 +55,18 @@ const projects = [
   },
   {
     number: "02",
+    name: "AI Notification Router",
+    label: "HackerRank Orchestrate · Rank #273 · 64.8/100",
+    description:
+      "A secure, explainable multimodal routing system that evaluates WhatsApp-style text, images, and voice notes, then assigns notify, digest, or mute decisions using Gemini, retrieval, OCR, and deterministic safety rules.",
+    tech: ["Python", "Gemini", "TF-IDF", "OCR", "GitHub Actions"],
+    image: "/projects/notification-router.svg",
+    github: "https://github.com/GAURAVNEGI33/ai-notification-router",
+    live: "",
+    className: "project project-feature project-router",
+  },
+  {
+    number: "03",
     name: "ResumeFlow",
     label: "Graded product experience · 85/100",
     description:
@@ -66,7 +78,7 @@ const projects = [
     className: "project project-wide",
   },
   {
-    number: "03",
+    number: "04",
     name: "Language Translator",
     label: "14-language translation tool",
     description:
@@ -79,7 +91,7 @@ const projects = [
     className: "project project-small",
   },
   {
-    number: "04",
+    number: "05",
     name: "Admission FAQ Bot",
     label: "Natural-language matching",
     description:
@@ -623,7 +635,7 @@ export default function Portfolio() {
                 points: ["ResumeFlow scored 85/100", "Strict semantic HTML standards", "Git conflict resolution and submissions"],
               },
               {
-                date: "2025 — Present",
+                date: "2025",
                 role: "AI/ML Intern",
                 company: "CodeAlpha",
                 copy: "Building practical language and FAQ tools while exploring applied AI, NLP, and automation workflows.",
