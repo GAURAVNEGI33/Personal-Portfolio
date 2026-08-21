@@ -1,31 +1,30 @@
 # Gaurav Negi — Personal Portfolio
 
-A premium, responsive portfolio showcasing my projects, skills, experience, education, and GitHub work.
+A responsive engineering portfolio showcasing selected full-stack, backend, AI, and open-source work.
 
 ## Live Portfolio
 
-- **Primary website:** [gaurav-negi-portfolio.gauravnegigvps.chatgpt.site](https://gaurav-negi-portfolio.gauravnegigvps.chatgpt.site)
-- **GitHub Pages:** [gauravnegi33.github.io/Personal-Portfolio](https://gauravnegi33.github.io/Personal-Portfolio/)
+- [Primary website](https://gaurav-negi-portfolio.gauravnegigvps.chatgpt.site)
+- [GitHub Pages](https://gauravnegi33.github.io/Personal-Portfolio/)
+
+## Featured Work
+
+- **ResumeFlow** — Angular 13 and Node.js ATS resume builder with 36 REST endpoints and 9 relational models
+- **AI Notification Router** — multimodal Gemini-powered routing system built for HackerRank Orchestrate 2026
+- **FitTrack AI** — React/Firebase nutrition PWA with a 300+ item food database
+- **Resume API** — layered Express/Sequelize/MySQL backend with authentication and relational data modeling
 
 ## Highlights
 
-- Monochrome editorial design with alternating light and dark sections
-- Smooth scrolling, scroll reveals, parallax, magnetic buttons, and micro-interactions
-- Responsive layouts for desktop, tablet, and mobile
-- Featured project cards with GitHub and live-demo links
-- Accessible navigation, semantic structure, and reduced-motion support
+- Monochrome editorial interface with motion and micro-interactions
+- Responsive desktop, tablet, and mobile layouts
+- Accessible navigation and reduced-motion support
+- Current resume, experience, education, GitHub, LinkedIn, and project links
 - SEO and social-sharing metadata
 
 ## Built With
 
-- React
-- TypeScript
-- Vinext
-- Tailwind CSS
-- Framer Motion
-- GSAP
-- Lenis
-- React Icons
+React, TypeScript, Vinext, Tailwind CSS, Framer Motion, GSAP, Lenis, and React Icons.
 
 ## Run Locally
 
@@ -34,18 +33,14 @@ npm install
 npm run dev
 ```
 
-Create a production build:
+Validate a production build and rendered HTML:
 
 ```bash
-npm run build
+npm test
 ```
 
 ## Contact
 
-- Email: [gauravnegigvps@gmail.com](mailto:gauravnegigvps@gmail.com)
-- GitHub: [@GAURAVNEGI33](https://github.com/GAURAVNEGI33)
-- LinkedIn: [Gaurav Negi](https://www.linkedin.com/in/gaurav-negi-1b7927337/)
-
----
-
-Designed and developed by Gaurav Negi.
+- [Email](mailto:gauravnegigvps@gmail.com)
+- [GitHub](https://github.com/GAURAVNEGI33)
+- [LinkedIn](https://www.linkedin.com/in/gaurav-negi-b2b162350)
