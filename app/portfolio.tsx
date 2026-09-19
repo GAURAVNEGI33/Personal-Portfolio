@@ -22,15 +22,15 @@ import {
   FiArrowUp,
 } from "react-icons/fi";
 import {
-  SiCss,
+  SiAngular,
   SiExpress,
   SiFirebase,
-  SiGit,
-  SiHtml5,
   SiJavascript,
+  SiMysql,
   SiNodedotjs,
   SiPython,
   SiReact,
+  SiTypescript,
 } from "react-icons/si";
 
 const nav = [
@@ -40,80 +40,90 @@ const nav = [
   ["Contact", "#contact"],
 ];
 
-const projects = [
+type Project = {
+  number: string;
+  name: string;
+  label: string;
+  description: string;
+  tech: string[];
+  image: string;
+  github: string;
+  live: string;
+  className: string;
+  visual?: Array<{ label: string; value: string }>;
+};
+
+const projects: Project[] = [
   {
     number: "01",
-    name: "FitTrack AI",
-    label: "AI nutrition companion",
+    name: "ResumeFlow",
+    label: "Full-stack ATS resume builder",
     description:
-      "A full-stack PWA combining a 300+ item food database, Google authentication, Firebase sync, and automatic Claude-to-Gemini fallback for complex meal analysis.",
-    tech: ["React", "Firebase", "Claude", "Gemini", "PWA"],
-    image: "/projects/fittrack.png",
-    github: "https://github.com/GAURAVNEGI33/fittrack-AI",
-    live: "https://fittrack-ai-1227.vercel.app",
+      "A production-style Angular 13 and Node.js monorepo with 36 REST endpoints and 9 relational models, JWT authentication, drag-and-drop editing, live preview, version history, public sharing, and PDF/DOCX export.",
+    tech: ["Angular 13", "TypeScript", "Node.js", "MySQL", "Sequelize"],
+    image: "/projects/resumeflow.png",
+    github: "https://github.com/GAURAVNEGI33/ResumeFlow",
+    live: "",
     className: "project project-feature",
   },
   {
     number: "02",
     name: "AI Notification Router",
-    label: "HackerRank Orchestrate · Rank #273 · 64.8/100",
+    label: "HackerRank Orchestrate · Top 14%",
     description:
-      "A secure, explainable multimodal routing system that evaluates WhatsApp-style text, images, and voice notes, then assigns notify, digest, or mute decisions using Gemini, retrieval, OCR, and deterministic safety rules.",
-    tech: ["Python", "Gemini", "TF-IDF", "OCR", "GitHub Actions"],
-    image: "/projects/notification-router.svg",
+      "A safety-first multimodal router for text, image, and voice messages that combines Gemini analysis, retrieval, OCR, and deterministic safeguards to choose notify, digest, or mute actions.",
+    tech: ["Python", "Gemini API", "TF-IDF", "OCR", "GitHub Actions"],
+    image: "",
     github: "https://github.com/GAURAVNEGI33/ai-notification-router",
     live: "",
-    className: "project project-feature project-router",
+    className: "project project-small project-code",
+    visual: [
+      { label: "input", value: "text | image | voice" },
+      { label: "engine", value: "retrieval + Gemini + safety" },
+      { label: "action", value: "notify | digest | mute" },
+    ],
   },
   {
     number: "03",
-    name: "ResumeFlow",
-    label: "Graded product experience · 85/100",
+    name: "FitTrack AI",
+    label: "AI nutrition PWA · 300+ foods",
     description:
-      "A responsive landing experience built from a PRD with semantic HTML, accessible hierarchy, reusable styling, and polished authentication screens.",
-    tech: ["HTML5", "CSS3", "JavaScript"],
-    image: "/projects/resumeflow.png",
-    github: "https://github.com/GAURAVNEGI33/resume-landing",
-    live: "https://gauravnegi33.github.io/resume-landing/",
+      "A nutrition-tracking PWA with Google OAuth, real-time Firestore sync, a 300+ item Indian and global food database, and Claude-to-Gemini fallback for complex meal analysis.",
+    tech: ["React", "Firebase", "Firestore", "Claude", "Gemini"],
+    image: "/projects/fittrack.png",
+    github: "https://github.com/GAURAVNEGI33/fittrack-AI",
+    live: "https://fittrack-ai-1227.vercel.app",
     className: "project project-wide",
   },
   {
     number: "04",
-    name: "Language Translator",
-    label: "14-language translation tool",
+    name: "Resume API",
+    label: "34 routes · relational backend",
     description:
-      "Real-time translation with language swapping, speech playback, clipboard actions, validation, and the MyMemory API.",
-    tech: ["JavaScript", "MyMemory API", "Web Speech"],
-    image: "/projects/translator.png",
-    github:
-      "https://github.com/GAURAVNEGI33/codealpha-language-translation-tool",
-    live: "https://gauravnegi33.github.io/codealpha-language-translation-tool/",
-    className: "project project-small",
-  },
-  {
-    number: "05",
-    name: "Admission FAQ Bot",
-    label: "Natural-language matching",
-    description:
-      "A Python FAQ assistant using NLTK preprocessing, TF-IDF vectors, and cosine similarity to match college-admission questions.",
-    tech: ["Python", "NLTK", "scikit-learn"],
+      "A layered REST API with modular routes, controllers, models, validation, bcrypt hashing, duplicate-email checks, and a Sequelize-backed User–Resume relationship with cascade deletion.",
+    tech: ["Node.js", "Express.js", "Sequelize", "MySQL", "bcrypt"],
     image: "",
-    github: "https://github.com/GAURAVNEGI33/codealpha-faq-chatbot",
+    github: "https://github.com/GAURAVNEGI33/resume-api",
     live: "",
-    className: "project project-small project-code",
+    className: "project project-wide project-code project-full-row",
+    visual: [
+      { label: "request", value: "validate()" },
+      { label: "service", value: "controller → Sequelize" },
+      { label: "response", value: "relational JSON" },
+    ],
   },
 ];
 
 const stack = [
-  { name: "React", Icon: SiReact },
+  { name: "Angular", Icon: SiAngular },
+  { name: "TypeScript", Icon: SiTypescript },
   { name: "JavaScript", Icon: SiJavascript },
-  { name: "HTML5", Icon: SiHtml5 },
-  { name: "CSS3", Icon: SiCss },
   { name: "Node.js", Icon: SiNodedotjs },
   { name: "Express", Icon: SiExpress },
+  { name: "MySQL", Icon: SiMysql },
+  { name: "React", Icon: SiReact },
   { name: "Firebase", Icon: SiFirebase },
   { name: "Python", Icon: SiPython },
-  { name: "Git", Icon: SiGit },
 ];
 
 function MagneticLink({
@@ -176,7 +186,7 @@ function Reveal({
   );
 }
 
-function ProjectCard({ project }: { project: (typeof projects)[number] }) {
+function ProjectCard({ project }: { project: Project }) {
   const cardRef = useRef<HTMLElement>(null);
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
@@ -217,15 +227,11 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
         </div>
       ) : (
         <div className="code-visual" aria-hidden="true">
-          <div>
-            <span>query</span> → preprocess()
-          </div>
-          <div>
-            <span>vector</span> → tfidf.transform()
-          </div>
-          <div>
-            <span>answer</span> → cosine_similarity()
-          </div>
+          {project.visual?.map((line) => (
+            <div key={line.label}>
+              <span>{line.label}</span> → {line.value}
+            </div>
+          ))}
         </div>
       )}
       <div className="project-content">
@@ -426,7 +432,7 @@ export default function Portfolio() {
         </motion.div>
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="eyebrow">Full-stack developer · India</div>
+            <div className="eyebrow">Software engineering student · Full-stack developer</div>
             <h1 aria-label="Gaurav Negi">
               <motion.span
                 initial={{ y: "110%" }}
@@ -451,9 +457,9 @@ export default function Portfolio() {
               transition={{ delay: 1.05, duration: 0.7 }}
             >
               <p>
-                I build <strong>AI-powered web products</strong> with real
-                authentication, live data, and interfaces designed to feel
-                effortless.
+                I build <strong>production-style full-stack software</strong>
+                with Angular, Node.js, MySQL, and applied AI—from secure APIs
+                to polished user experiences.
               </p>
               <div className="hero-actions">
                 <MagneticLink href="#work" className="button button-primary">
@@ -481,18 +487,18 @@ export default function Portfolio() {
               <span>01 / 04</span>
             </div>
             <div className="artifact-screen">
-              <img src="/projects/fittrack.png" alt="FitTrack AI dashboard preview" />
+              <img src="/projects/resumeflow.png" alt="ResumeFlow interface preview" />
             </div>
             <div className="artifact-info">
               <div>
-                <span>FitTrack AI</span>
-                <small>Full-stack nutrition PWA</small>
+                <span>ResumeFlow</span>
+                <small>Full-stack ATS resume builder</small>
               </div>
               <a
-                href="https://fittrack-ai-1227.vercel.app"
+                href="https://github.com/GAURAVNEGI33/ResumeFlow"
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Open FitTrack AI"
+                aria-label="Open ResumeFlow on GitHub"
               >
                 <FiArrowUpRight />
               </a>
@@ -528,11 +534,11 @@ export default function Portfolio() {
             </Reveal>
             <Reveal className="about-body" delay={0.12}>
               <p>
-                I&apos;m a Computer Science Engineering student based in
-                Ramnagar, Uttarakhand, building full-stack applications end to
-                end—not just UI. My work spans authentication, real-time data,
-                AI integrations, semantic frontend architecture, testing, and
-                deployment.
+                I&apos;m a B.Tech Computer Science Engineering student at
+                Amrapali University, graduating in 2028. Based in Ramnagar,
+                Uttarakhand, I build full-stack applications end to end—not
+                just UI. My work spans authentication, REST APIs, relational
+                data, AI integrations, testing, and deployment.
               </p>
               <p>
                 I care about the details that make software trustworthy:
@@ -546,9 +552,9 @@ export default function Portfolio() {
           </div>
           <div className="metrics">
             {[
-              ["300+", "food items catalogued"],
-              ["85/100", "graded project score"],
-              ["02", "active internships"],
+              ["36", "ResumeFlow REST endpoints"],
+              ["Top 14%", "HackerRank Orchestrate"],
+              ["23", "router automated tests"],
             ].map(([value, label], index) => (
               <Reveal className="metric" delay={index * 0.08} key={value}>
                 <strong>{value}</strong>
@@ -605,7 +611,7 @@ export default function Portfolio() {
             <div className="marquee" aria-label="Additional skills">
               <div className="marquee-track">
                 {[...Array(2)].flatMap((_, group) =>
-                  ["Java", "DSA", "DBMS", "Postman", "Figma", "GitHub Actions", "Chrome DevTools"].map((item) => (
+                  ["Java", "DSA", "DBMS", "Angular Material", "Angular CDK", "Sequelize", "Postman", "GitHub Actions"].map((item) => (
                     <span key={`${group}-${item}`}>{item}<i>✦</i></span>
                   ))
                 )}
@@ -628,18 +634,18 @@ export default function Portfolio() {
           <div className="timeline">
             {[
               {
-                date: "2026 — Present",
+                date: "June 2026 — Present",
                 role: "Full-Stack & QA Intern",
                 company: "Shorter Loop",
-                copy: "Completing weekly graded deliverables and instructor code reviews across full-stack development and QA.",
-                points: ["ResumeFlow scored 85/100", "Strict semantic HTML standards", "Git conflict resolution and submissions"],
+                copy: "Building ResumeFlow’s Angular 13 interface while completing structured full-stack development and QA assignments.",
+                points: ["Reusable components and SCSS reduced duplicate styling by ~30%", "Interactive behavior across 5+ modules", "10+ development and QA assignments"],
               },
               {
-                date: "2025",
-                role: "AI/ML Intern",
+                date: "May 2026 — June 2026",
+                role: "AI/ML Intern (API Integration & NLP)",
                 company: "CodeAlpha",
-                copy: "Building practical language and FAQ tools while exploring applied AI, NLP, and automation workflows.",
-                points: ["14-language translation interface", "NLP FAQ matching pipeline", "Project-based remote internship"],
+                copy: "Built applied language tools using a translation API and a Python/NLTK retrieval pipeline.",
+                points: ["Real-time translation across 50+ languages", "TF-IDF cosine similarity matching", "Structured coverage across 20+ FAQ categories"],
               },
             ].map((item, index) => (
               <Reveal className="timeline-row" key={item.company} delay={index * 0.08}>
@@ -687,9 +693,9 @@ export default function Portfolio() {
           </Reveal>
           <div className="repo-grid">
             {[
-              ["Resume API", "Node.js · Express", "A backend learning project exploring routes, controllers, models, middleware, and REST architecture.", "https://github.com/GAURAVNEGI33/resume-api"],
-              ["Web Dev Learning", "Internship archive", "Weekly notes, assignments, and practical implementations from my full-stack internship journey.", "https://github.com/GAURAVNEGI33/Web-Dev-Learning"],
-              ["How a Website Opens", "Technical explainer", "A visual explanation of DNS, HTTP requests, servers, and how browsers turn a URL into a page.", "https://github.com/GAURAVNEGI33/how-website-is-open"],
+              ["Yassir OSS Contribution", "TypeScript · Bun", "Merged upstream PR adding machine-readable JSON output to the yassir watch command, backed by parser and output tests.", "https://github.com/goww7/yassir-oss/pull/11"],
+              ["LeetCode Solutions", "DSA · Problem solving", "A growing collection of accepted solutions used to strengthen data structures, algorithms, and complexity-analysis fundamentals.", "https://github.com/GAURAVNEGI33/Leetcode-Solution"],
+              ["ResumeFlow Architecture", "Angular · Node.js · MySQL", "Six engineering specifications covering authentication, editor workflows, exports, public sharing, applications, and template theming.", "https://github.com/GAURAVNEGI33/ResumeFlow/tree/main/docs/features"],
             ].map(([title, tag, copy, link], index) => (
               <Reveal className="repo-card" delay={index * 0.08} key={title}>
                 <div className="repo-top"><FiGithub /><span>{tag}</span></div>
@@ -712,8 +718,8 @@ export default function Portfolio() {
               <p>Amrapali University · Haldwani, Uttarakhand</p>
             </Reveal>
             <Reveal className="education-side" delay={0.1}>
-              <div><span>2022 — 2023</span><strong>Intermediate (12th)</strong><p>Great Mission Public School, Ramnagar</p></div>
-              <div><span>Languages</span><strong>Hindi · Native</strong><p>English · Fluent</p></div>
+              <div><span>Academic performance</span><strong>CGPA 8.1 / 10</strong><p>Computer Science Engineering</p></div>
+              <div><span>HackerRank Orchestrate 2026</span><strong>Rank #273 of 1,983</strong><p>Top 14% · AI agent challenge</p></div>
             </Reveal>
           </div>
         </section>

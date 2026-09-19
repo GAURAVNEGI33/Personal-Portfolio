@@ -35,18 +35,21 @@ test("server-renders the complete portfolio and metadata", async () => {
 
   const html = await response.text();
   assert.match(html, /Gaurav Negi/);
-  assert.match(html, /AI-powered web products/);
-  assert.match(html, /FitTrack AI/);
-  assert.match(html, /AI Notification Router/);
-  assert.match(html, /Rank #273/);
   assert.match(html, /ResumeFlow/);
+  assert.match(html, /36 REST endpoints/);
+  assert.match(html, /AI Notification Router/);
+  assert.match(html, /Top 14%/);
+  assert.match(html, /FitTrack AI/);
+  assert.match(html, /Resume API/);
   assert.match(html, /Full-Stack &amp; QA Intern/);
-  assert.match(html, /2025[\s\S]*CodeAlpha/);
-  assert.doesNotMatch(html, /2025\s*—\s*Present/);
+  assert.match(html, /June 2026[\s\S]*Present/);
+  assert.match(html, /May 2026[\s\S]*June 2026[\s\S]*CodeAlpha/);
+  assert.doesNotMatch(html, /CodeAlpha[\s\S]{0,500}Present/);
   assert.match(html, /Amrapali University/);
+  assert.match(html, /CGPA 8\.1/);
   assert.match(html, /gauravnegigvps@gmail\.com/);
   assert.match(html, /Skip to content/);
-  assert.match(html, /https:\/\/portfolio\.example\/og-monochrome\.png/);
+  assert.match(html, /https:\/\/gaurav-negi-portfolio\.gauravnegigvps\.chatgpt\.site\/og-monochrome\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
 });
 
@@ -65,7 +68,7 @@ test("keeps accessibility and performance safeguards in source", async () => {
   assert.match(portfolio, /Lenis/);
   assert.match(portfolio, /ScrollTrigger/);
   assert.match(layout, /openGraph/);
-  assert.match(layout, /x-forwarded-host/);
+  assert.doesNotMatch(layout, /x-forwarded-host/);
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /\.skip-link/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
